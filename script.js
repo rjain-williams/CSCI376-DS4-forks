@@ -1,12 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const books = document.querySelectorAll(".book");
     const highlightBtn = document.querySelector("#highlightButton");
     const resetBtn = document.querySelector("#resetButton");
     const clearBtn = document.querySelector("#clearButton");
-  
+    const sortTitleBtn = document.querySelector("#sortTitleButton");
+    const sortYearBtn = document.querySelector("#sortYearButton");
+    const bookContainer = document.querySelector("#bookContainer"); 
+
+    // ----- SORT LOGIC -----
+    function sortBooks(compareFn) {
+      const books = document.querySelectorAll(".book");
+      const bookArray = Array.from(books).sort(compareFn);
+      bookArray.forEach(book => bookContainer.appendChild(book.closest(".col")));
+    }
+    
+    sortTitleBtn.addEventListener("click", () => {
+      sortBooks((a, b) => {
+        const titleA = a.querySelector("h2").textContent.toLowerCase();
+        const titleB = b.querySelector("h2").textContent.toLowerCase();
+        return titleA.localeCompare(titleB);
+      });
+    });
+    
+    sortYearBtn.addEventListener("click", () => {
+      sortBooks((a, b) => {
+        const yearA = parseInt(a.querySelector(".year").textContent, 10);
+        const yearB = parseInt(b.querySelector(".year").textContent, 10);
+        return yearA - yearB;
+      });
+    });
+
     // ----- EVENTS -----
     highlightBtn.addEventListener("click", () => {
-      books.forEach(book => {
+      document.querySelectorAll(".book").forEach(book => {
         const title = book.querySelector("h2").textContent;
         if (title.length > 20) {
           book.classList.remove("border-primary");
@@ -16,14 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     resetBtn.addEventListener("click", () => {
-      books.forEach(book => {
+      document.querySelectorAll(".book").forEach(book => {
         book.classList.remove("border-danger", "border-3", "bg-info", "text-white", "d-none");
         book.classList.add("border-primary");
       });
       searchInput.value = "";
     });
   
-    books.forEach(book => {
+    document.querySelectorAll(".book").forEach(book => {
       book.addEventListener("click", () => {
         book.classList.add("bg-info", "text-white");
         setTimeout(() => {
@@ -35,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ----- SEARCH LOGIC -----
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.toLowerCase();
-      books.forEach(book => {
+      document.querySelectorAll(".book").forEach(book => {
         const title = book.querySelector("h2").textContent.toLowerCase();
         book.closest(".col").classList.toggle("d-none", !title.includes(query));
       });
@@ -43,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     clearBtn.addEventListener("click", () => {
       searchInput.value = "";
-      books.forEach(book => {
+      document.querySelectorAll(".book").forEach(book => {
         book.closest(".col").classList.remove("d-none");
       });
     });
