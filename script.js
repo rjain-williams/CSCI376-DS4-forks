@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resetBtn = document.querySelector("#resetButton");
     const clearBtn = document.querySelector("#clearButton");
     const sortTitleBtn = document.querySelector("#sortTitleButton");
+    const sortAuthorBtn = document.querySelector("#sortAuthorButton");
     const sortYearBtn = document.querySelector("#sortYearButton");
     const bookContainer = document.querySelector("#bookContainer"); 
 
@@ -18,6 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const titleA = a.querySelector("h2").textContent.toLowerCase();
         const titleB = b.querySelector("h2").textContent.toLowerCase();
         return titleA.localeCompare(titleB);
+      });
+    });
+
+    sortAuthorBtn.addEventListener("click", () => {
+      sortBooks((a, b) => {
+        const authorA = a.querySelector(".card-text").textContent.toLowerCase();
+        const authorB = b.querySelector(".card-text").textContent.toLowerCase();
+        const splitA = authorA.split(' ');
+        const aA = splitA[splitA.length - 1];
+        const splitB = authorB.split(' ');
+        const bB = splitB[splitB.length - 1];
+        return aA.localeCompare(bB);
       });
     });
     
@@ -49,6 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     document.querySelectorAll(".book").forEach(book => {
+
+      // Add tooltips
+      book.setAttribute("data-bs-toggle", "tooltip");
+      book.setAttribute("title", book.querySelector("h2").textContent + " " + book.querySelector(".card-text").textContent + ", published " + book.querySelector(".year").textContent);
+
       book.addEventListener("click", () => {
         book.classList.add("bg-light-pink", "text-cream");
         setTimeout(() => {
@@ -56,6 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
       });
     });
+
+    // Activate tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
   
     // ----- SEARCH LOGIC -----
     searchInput.addEventListener("input", () => {
