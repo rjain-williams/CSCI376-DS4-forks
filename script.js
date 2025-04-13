@@ -34,25 +34,25 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".book").forEach(book => {
         const title = book.querySelector("h2").textContent;
         if (title.length > 20) {
-          book.classList.remove("border-primary");
-          book.classList.add("border-danger", "border-3");
+          book.classList.remove("border-light-pink");
+          book.classList.add("border-light-pink", "border-4");
         }
       });
     });
   
     resetBtn.addEventListener("click", () => {
       document.querySelectorAll(".book").forEach(book => {
-        book.classList.remove("border-danger", "border-3", "bg-info", "text-white", "d-none");
-        book.classList.add("border-primary");
+        book.classList.remove("border-light-pink", "border-4", "bg-light-pink", "text-cream", "d-none");
+        book.classList.add("border-light-green");
       });
       searchInput.value = "";
     });
   
     document.querySelectorAll(".book").forEach(book => {
       book.addEventListener("click", () => {
-        book.classList.add("bg-info", "text-white");
+        book.classList.add("bg-light-pink", "text-cream");
         setTimeout(() => {
-          book.classList.remove("bg-info", "text-white");
+          book.classList.remove("bg-light-pink", "text-cream");
         }, 1000);
       });
     });

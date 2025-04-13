@@ -1,46 +1,69 @@
+/* Font & Color Overrides */
 body {
-    color: black;
-    margin: 0;
-    padding: 0;
+  font-family: 'Lora', serif;
+  color: #4f4f4f;
+  background-color: #f9f7f3;
+  }
+
+  /* Custom Colors as Bootstrap-like utility classes */
+  .bg-primary-blue {
+    background-color: #0043ca !important;
   }
   
-  header {
-    text-align: center;
-    padding: 10px;
+  .bg-dark-grey {
+    background-color: #4f4f4f !important;
+  }
+
+  .bg-light-pink {
+    background-color: #ead1dc !important;
+  }
+
+  .bg-light-green {
+    background-color: #81c764 !important;
+  }
+
+  .bg-cream {
+    background-color: #f9f7f3 !important;
+  }
+
+  .text-dark-gray {
+    color: #4f4f4f !important;
+  }
+
+   /* ended up changing this to a dark orange/brown to contrast with the green but lmk thoughts (versus dark blue) */
+  .text-dark-blue {
+    color: #884303 !important;
+  }
+
+  .text-cream {
+    color: #f9f7f3 !important;
+  }
+
+  .border-light-green {
+    border-color: #81c764 !important;
   }
   
-  nav ul {
-    list-style: none;
-    padding: 0;
+  .border-light-pink {
+    border-color: #ead1dc !important;
   }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 30px;
+
+  .btn-outline-dark-blue{
+    color: #0043ca !important;
+    border-color: #0043ca !important;
   }
-  
-  nav ul li a {
-    text-decoration: underline;
-    font-weight: bold;
+
+  .btn-outline-dark-blue:hover {
+    background-color: #0043ca !important;
+    color: #f9f7f3 !important;
+
   }
-  
-  .book-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 30px;
-  }
-  
+
+  /* Hover effect for books (Affordance & Feedback) */
   .book {
-    padding: 15px;
-    margin: 20px;
-    width: 200px;
-    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
   }
-  
-  footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5rem;
+  .book:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
-  
