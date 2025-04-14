@@ -7,6 +7,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const sortYearBtn = document.querySelector("#sortYearButton");
     const bookContainer = document.querySelector("#bookContainer"); 
 
+    document.querySelectorAll(".book").forEach((book, i) => {
+      const bookTooltips = [
+          "In which themes of wealth, love, and societal decay in 1920s America are explored.",
+          "In which themes of racial injustice and moral growth are explored through the perspective of a young girl in the American South.",
+          "In which the consequences of totalitarianism, surveillance, and the manipulation of truth are examined.",
+          "In which the relationship between Elizabeth Bennet and Mr. Darcy implicitly comments on social class and marriage in 19th-century England.",
+          "In which Captain Ahab relentlessly pursues the white whale that maimed him.",
+          "In which a disillusioned teenager struggles to understand his place in the world.",
+          "In which a reluctant hero embarks on a fantasy adventure to recover treasure.",
+          "In which a cautionary tale about one fireman’s crisis of conscience unfolds in a future society where books are banned.",
+          "In which the story of an orphaned young woman’s journey to independence is intertwined with her complex relationship with her employer, Mr. Rochester.",
+          "In which a story of passionate yet destructive love unfolds against the backdrop of the isolated Yorkshire moors."
+      ];
+
+      // Add tooltips
+      book.setAttribute("data-bs-toggle", "tooltip");
+      book.setAttribute("title", bookTooltips[i]);
+
+      selected_flag = false;
+      book.addEventListener("click", () => {
+        if (selected_flag) {
+          book.classList.remove("bg-selected-green");
+          selected_flag = false;
+        } else {
+          book.classList.add("bg-selected-green");
+          selected_flag = true
+        }
+
+        // setTimeout(() => {
+        //   book.classList.remove("bg-light-pink", "text-cream");
+        // }, 1000);
+      });
+    });
+
+
     // ----- SORT LOGIC -----
     function sortBooks(compareFn) {
       const books = document.querySelectorAll(".book");
@@ -61,27 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
       searchInput.value = "";
     });
   
-    document.querySelectorAll(".book").forEach(book => {
-
-      // Add tooltips
-      book.setAttribute("data-bs-toggle", "tooltip");
-      book.setAttribute("title", book.querySelector("h2").textContent + " " + book.querySelector(".card-text").textContent + ", published " + book.querySelector(".year").textContent);
-
-      selected_flag = false;
-      book.addEventListener("click", () => {
-        if (selected_flag) {
-          book.classList.remove("bg-selected-green");
-          selected_flag = false;
-        } else {
-          book.classList.add("bg-selected-green");
-          selected_flag = true
-        }
-
-        // setTimeout(() => {
-        //   book.classList.remove("bg-light-pink", "text-cream");
-        // }, 1000);
-      });
-    });
 
     // Activate tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
