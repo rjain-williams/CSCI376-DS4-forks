@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const highlightBtn = document.querySelector("#highlightButton");
-    const resetBtn = document.querySelector("#resetButton");
     const clearBtn = document.querySelector("#clearButton");
     const sortTitleBtn = document.querySelector("#sortTitleButton");
     const sortAuthorBtn = document.querySelector("#sortAuthorButton");
@@ -34,10 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
           book.classList.add("bg-selected-green");
           selected_flag = true
         }
-
-        // setTimeout(() => {
-        //   book.classList.remove("bg-light-pink", "text-cream");
-        // }, 1000);
       });
     });
 
@@ -78,25 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ----- EVENTS -----
-    highlightBtn.addEventListener("click", () => {
-      document.querySelectorAll(".book").forEach(book => {
-        const title = book.querySelector("h2").textContent;
-        if (title.length > 20) {
-          book.classList.remove("border-light-pink");
-          book.classList.add("border-light-pink", "border-4");
-        }
-      });
-    });
-  
-    resetBtn.addEventListener("click", () => {
-      document.querySelectorAll(".book").forEach(book => {
-        book.classList.remove("border-light-pink", "border-4", "bg-light-pink", "text-cream", "d-none");
-        book.classList.add("border-light-green");
-      });
-      searchInput.value = "";
-    });
-  
-
     // Activate tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
