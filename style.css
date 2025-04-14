@@ -22,6 +22,10 @@ body {
     background-color: #81c764 !important;
   }
 
+  .bg-selected-green {
+    background-color: #ceebae !important;
+  }
+
   .bg-cream {
     background-color: #f9f7f3 !important;
   }

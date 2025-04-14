@@ -67,11 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
       book.setAttribute("data-bs-toggle", "tooltip");
       book.setAttribute("title", book.querySelector("h2").textContent + " " + book.querySelector(".card-text").textContent + ", published " + book.querySelector(".year").textContent);
 
+      selected_flag = false;
       book.addEventListener("click", () => {
-        book.classList.add("bg-light-pink", "text-cream");
-        setTimeout(() => {
-          book.classList.remove("bg-light-pink", "text-cream");
-        }, 1000);
+        if (selected_flag) {
+          book.classList.remove("bg-selected-green");
+          selected_flag = false;
+        } else {
+          book.classList.add("bg-selected-green");
+          selected_flag = true
+        }
+
+        // setTimeout(() => {
+        //   book.classList.remove("bg-light-pink", "text-cream");
+        // }, 1000);
       });
     });
 
