@@ -67,3 +67,27 @@ body {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
+
+
+.tooltip {
+  background-color: #81c764 !important; 
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  padding: 10px 15px !important;
+}
+
+
+.tooltip-inner {
+  color: #f9f7f3 !important;
+  text-align: center !important;
+  padding: 8px 12px !important; 
+}
+
+
+.tooltip-arrow {
+  border-top-color: #81c764 !important; 
+}
+
+[data-bs-toggle="tooltip"] {
+  font-weight: bold; 
+}
