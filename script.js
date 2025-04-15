@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sortAuthorBtn = document.querySelector("#sortAuthorButton");
     const sortYearBtn = document.querySelector("#sortYearButton");
     const clearSelectionBtn = document.querySelector("#clearSelectionButton");
+    const genreFilter = document.querySelector("#genreFilter");
     const bookContainer = document.querySelector("#bookContainer"); 
 
     document.querySelectorAll(".book").forEach((book, i) => {
@@ -78,6 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
       bookArray.forEach(book => {
         book.classList.remove("bg-selected-green");
         book.selected_flag = false;
+      });
+    });
+
+
+    genreFilter.addEventListener("change", () => {
+      const selectedGenre = genreFilter.value;
+      document.querySelectorAll(".book").forEach(book => {
+        const genre = book.querySelector(".genre").textContent.toLowerCase();
+        const shouldShow = selectedGenre === "all" || genre === selectedGenre;
+        book.closest(".col").classList.toggle("d-none", !shouldShow);
       });
     });
 

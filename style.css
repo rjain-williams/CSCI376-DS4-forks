@@ -55,16 +55,24 @@ body {
     border-color: #ead1dc !important;
   }
 
-  .btn-outline-dark-blue{
-    color: #0043ca !important;
-    border-color: #0043ca !important;
+  .btn-outline-dark-green{
+    color: #344e41 !important;
+    border-color: #344e41 !important;
   }
 
-  .btn-outline-dark-blue:hover {
-    background-color: #0043ca !important;
+  .btn-outline-dark-green:hover {
+    background-color: #344e41 !important;
     color: #f9f7f3 !important;
 
   }
+
+  .btn-dark-green{
+    color: #ffffff !important;
+    border-color: none !important;
+    background-color: #344e41 !important;
+  }
+
+  
 
   /* Hover effect for books (Affordance & Feedback) */
   .book {
