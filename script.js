@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sortTitleBtn = document.querySelector("#sortTitleButton");
     const sortAuthorBtn = document.querySelector("#sortAuthorButton");
     const sortYearBtn = document.querySelector("#sortYearButton");
+    const clearSelectionBtn = document.querySelector("#clearSelectionButton");
     const bookContainer = document.querySelector("#bookContainer"); 
 
     document.querySelectorAll(".book").forEach((book, i) => {
@@ -23,14 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
       book.setAttribute("data-bs-toggle", "tooltip");
       book.setAttribute("title", bookTooltips[i]);
 
-      selected_flag = false;
+      book.selected_flag = false;
       book.addEventListener("click", () => {
-        if (selected_flag) {
+        if (book.selected_flag) {
           book.classList.remove("bg-selected-green");
-          selected_flag = false;
+          book.selected_flag = false;
         } else {
           book.classList.add("bg-selected-green");
-          selected_flag = true
+          book.selected_flag = true;
         }
       });
     });
@@ -68,6 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const yearA = parseInt(a.querySelector(".year").textContent, 10);
         const yearB = parseInt(b.querySelector(".year").textContent, 10);
         return yearA - yearB;
+      });
+    });
+
+    clearSelectionBtn.addEventListener("click", () => {
+      const books = document.querySelectorAll(".book");
+      const bookArray = Array.from(books);
+      bookArray.forEach(book => {
+        book.classList.remove("bg-selected-green");
+        book.selected_flag = false;
       });
     });
 
