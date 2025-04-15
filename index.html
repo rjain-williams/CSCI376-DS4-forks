@@ -17,25 +17,26 @@
       <h1 class="mb-3 mb-md-0">Book Catalog</h1>
       <nav>
         <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-cream" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-cream" href="#">Categories</a></li>
-          <li class="nav-item"><a class="nav-link text-cream" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link text-cream" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link fs-6 text-cream fw-bold text-uppercase" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link fs-6 text-cream fw-bold text-uppercase" href="#">Categories</a></li>
+          <li class="nav-item"><a class="nav-link fs-6 text-cream fw-bold text-uppercase" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link fs-6 text-cream fw-bold text-uppercase" href="#">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
   
   <main class="container">
-    <div class="input-group mb-4 shadow-sm">
+    <div class="input-group mb-4 shadow-sm w-50 mx-auto">
         <input type="text" id="searchInput" class="form-control" placeholder="Search for a book title...">
-        <button class="btn btn-outline-dark" id="clearButton">Clear</button>
+        <button class="btn btn-outline-dark-blue" id="clearButton">Clear</button>
     </div>
-    <div class="d-flex justify-content-left flex-wrap gap-3 my-4">
+    <div class="d-flex justify-content-center flex-wrap gap-3 my-4">
         <button class="btn btn-outline-dark-blue" id="sortTitleButton">Sort by Title</button>
         <button class="btn btn-outline-dark-blue" id="sortAuthorButton">Sort by Author</button>
         <button class="btn btn-outline-dark-blue" id="sortYearButton">Sort by Year</button>
         <button class="btn btn-outline-dark-blue" id="clearSelectionButton">Clear Selection</button>
+        <button class="btn btn-outline-dark-blue" id="sortGenreButton">Sort by Genre</button> <!-- probably should have this a drop down tho-->
     </div>
     <div id="bookContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       <div class="col">
@@ -43,9 +44,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://g.christianbook.com/dg/slideshow/f400/273565_1_ftc.jpg" class="img-fluid rounded" alt="Cover of The Great Gatsby" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">The Great Gatsby</a></h2>
-              <p class="card-text mb-1">by F. Scott Fitzgerald</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">The Great Gatsby</a></h2>
+              <p class="card-text mb-1 fst-italic">by F. Scott Fitzgerald</p>
               <p class="year fw-semibold mb-0">1925</p>
+              <p class="rating text-gold mb-0">⭐ 3.93 / 5</p>
             </div>
           </div>
         </div>
@@ -55,9 +57,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://m.media-amazon.com/images/I/81aY1lxk+9L.jpg" class="img-fluid rounded" alt="Cover of To Kill a Mockingbird" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">To Kill a Mockingbird</a></h2>
-              <p class="card-text mb-1">by Harper Lee</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">To Kill a Mockingbird</a></h2>
+              <p class="card-text mb-1 fst-italic">by Harper Lee</p>
               <p class="year fw-semibold mb-0">1960</p>
+              <p class="rating text-gold mb-0">⭐ 4.26 / 5</p>
             </div>
           </div>
         </div>
@@ -67,9 +70,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://i.etsystatic.com/31513412/r/il/455f92/4081428546/il_fullxfull.4081428546_dl25.jpg" class="img-fluid rounded" alt="Cover of 1984" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">1984</a></h2>
-              <p class="card-text mb-1">by George Orwell</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">1984</a></h2>
+              <p class="card-text mb-1 fst-italic">by George Orwell</p>
               <p class="year fw-semibold mb-0">1949</p>
+              <p class="rating text-gold mb-0">⭐ 4.20 / 5</p>
             </div>
           </div>
         </div>
@@ -79,9 +83,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://www.gutenberg.org/files/1342/1342-h/images/cover.jpg" class="img-fluid rounded" alt="Cover of Pride and Prejudice" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">Pride and Prejudice</a></h2>
-              <p class="card-text mb-1">by Jane Austen</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">Pride and Prejudice</a></h2>
+              <p class="card-text mb-1 fst-italic">by Jane Austen</p>
               <p class="year fw-semibold mb-0">1813</p>
+              <p class="rating text-gold mb-0">⭐ 4.29 / 5</p>
             </div>
           </div>
         </div>
@@ -91,9 +96,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://m.media-amazon.com/images/I/91xNmlf86yL.jpg" class="img-fluid rounded" alt="Cover of Moby-Dick" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">Moby-Dick</a></h2>
-              <p class="card-text mb-1">by Herman Melville</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">Moby-Dick</a></h2>
+              <p class="card-text mb-1 fst-italic">by Herman Melville</p>
               <p class="year fw-semibold mb-0">1851</p>
+              <p class="rating text-gold mb-0">⭐ 3.56 / 5</p>
             </div>
           </div>
         </div>
@@ -103,9 +109,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://m.media-amazon.com/images/I/8125BDk3l9L.jpg" class="img-fluid rounded" alt="Cover of The Catcher in the Rye" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">The Catcher in the Rye</a></h2>
-              <p class="card-text mb-1">by J.D. Salinger</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">The Catcher in the Rye</a></h2>
+              <p class="card-text mb-1 fst-italic">by J.D. Salinger</p>
               <p class="year fw-semibold mb-0">1951</p>
+              <p class="rating text-gold mb-0">⭐ 3.80 / 5</p>
             </div>
           </div>
         </div>
@@ -115,9 +122,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://m.media-amazon.com/images/I/81axMfFDSrL.jpg" class="img-fluid rounded" alt="Cover of The Hobbit" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">The Hobbit</a></h2>
-              <p class="card-text mb-1">by J.R.R. Tolkien</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">The Hobbit</a></h2>
+              <p class="card-text mb-1 fst-italic">by J.R.R. Tolkien</p>
               <p class="year fw-semibold mb-0">1937</p>
+              <p class="rating text-gold mb-0">⭐ 4.29 / 5</p>
             </div>
           </div>
         </div>
@@ -127,9 +135,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://m.media-amazon.com/images/I/61zc4fPQbIL.jpg" class="img-fluid rounded" alt="Cover of Fahrenheit 451" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">Fahrenheit 451</a></h2>
-              <p class="card-text mb-1">by Ray Bradbury</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">Fahrenheit 451</a></h2>
+              <p class="card-text mb-1 fst-italic">by Ray Bradbury</p>
               <p class="year fw-semibold mb-0">1953</p>
+              <p class="rating text-gold mb-0">⭐ 3.97 / 5</p>
             </div>
           </div>
         </div>
@@ -139,9 +148,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://m.media-amazon.com/images/I/717PrUKL+0L._AC_UF894,1000_QL80_DpWeblab_.jpg" class="img-fluid rounded" alt="Cover of Jane Eyre" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">Jane Eyre</a></h2>
-              <p class="card-text mb-1">by Charlotte Brontë</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">Jane Eyre</a></h2>
+              <p class="card-text mb-1 fst-italic">by Charlotte Brontë</p>
               <p class="year fw-semibold mb-0">1847</p>
+              <p class="rating text-gold mb-0">⭐ 4.15 / 5</p>
             </div>
           </div>
         </div>
@@ -151,9 +161,10 @@
           <div class="d-flex align-items-start gap-3">
             <img src="https://m.media-amazon.com/images/I/91WTAm9DPzL._AC_UF1000,1000_QL80_.jpg" class="img-fluid rounded" alt="Cover of Wuthering Heights" style="max-width: 100px;">
             <div>
-              <h2 class="h5 mb-1"><a href="#" class="text-dark-blue text-decoration-none">Wuthering Heights</a></h2>
-              <p class="card-text mb-1">by Emily Brontë</p>
+              <h2 class="h4 mb-1 fw-bold"><a href="#" class="text-dark-blue text-decoration-none">Wuthering Heights</a></h2>
+              <p class="card-text mb-1 fst-italic">by Emily Brontë</p>
               <p class="year fw-semibold mb-0">1847</p>
+              <p class="rating text-gold mb-0">⭐ 3.90 / 5</p>
             </div>
           </div>
         </div>

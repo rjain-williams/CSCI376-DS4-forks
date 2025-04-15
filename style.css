@@ -27,7 +27,7 @@ body {
   }
 
   .bg-cream {
-    background-color: #ecddc1 !important;
+    background-color: #f8f1e3 !important;
   }
 
   .text-dark-gray {
@@ -41,6 +41,10 @@ body {
 
   .text-cream {
     color: #f9f7f3 !important;
+  }
+
+  .text-gold {
+    color: #bb950a !important;
   }
 
   .border-light-green {
