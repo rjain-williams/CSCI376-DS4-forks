@@ -1,9 +1,24 @@
 /* Font & Color Overrides */
 body {
-  font-family: 'Lora', serif;
+  font-family: "Gill Sans", sans-serif;
   color: #4f4f4f;
   background-color: #f9f7f3;
   }
+
+  .skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
 
   /* Custom Colors as Bootstrap-like utility classes */
   .bg-primary-blue {
@@ -44,7 +59,7 @@ body {
   }
 
   .text-gold {
-    color: #bb950a !important;
+    color: #614d04 !important;
   }
 
   .border-light-green {
@@ -58,11 +73,14 @@ body {
   .btn-outline-dark-green{
     color: #344e41 !important;
     border-color: #344e41 !important;
+    border-width: medium;
   }
 
-  .btn-outline-dark-green:hover {
+  .btn-outline-dark-green:hover, .btn-outline-dark-green:focus {
     background-color: #344e41 !important;
     color: #f9f7f3 !important;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 
   }
 
@@ -79,7 +97,7 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
   }
-  .book:hover {
+  .book:hover, .book:focus {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
