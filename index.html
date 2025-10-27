@@ -11,8 +11,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css"> 
 </head>
-<body class="bg-cream text-dark-gray" style="font-family: 'Lora', serif;">
+<body class="bg-cream text-dark-gray" style="font-family: 'Gill Sans', sans-serif;">
   <header aria-labelledby="navbar" class="bg-light-green text-white p-4 mb-4">
+    <a href="#main" class="skip">Skip to main content</a>
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
       <h1 id="navbar" class="mb-3 mb-md-0">Book Catalog</h1>
       <nav>
@@ -26,17 +27,17 @@
     </div>
   </header>
   
-  <main class="container">
+  <main id="main" class="container">
     <div class="input-group mb-4 shadow-sm w-50 mx-auto">
         <input type="text" id="searchInput" class="form-control" placeholder="Search for a book title...">
         <button class="btn btn-outline-dark-green" id="clearButton">Clear</button>
     </div>
     <div class="d-flex justify-content-center flex-wrap gap-3 my-4">
-        <button class="btn btn-outline-dark-green" id="sortTitleButton">Sort by Title</button>
+        <button class="btn btn-outline-dark-green" id="sortTitleButton" aria-label="Sort by Title" title="Sort by Title">Sort by Title</button>
         <button class="btn btn-outline-dark-green" id="sortAuthorButton">Sort by Author</button>
         <button class="btn btn-outline-dark-green" id="sortYearButton">Sort by Year</button>
         <button class="btn btn-outline-dark-green" id="clearSelectionButton">Clear Selection</button>
-        <select class="form-select w-auto btn-dark-green text-white border-0" id="genreFilter">
+        <select class="form-select w-auto btn-outline-dark-green" id="genreFilter">
           <option value="all">Filter By Genre</option>
           <option value="tragedy">Tragedy</option>
           <option value="historical fiction">Historical Fiction</option>
@@ -59,7 +60,7 @@
               <p class="card-text mb-1 fst-italic">by F. Scott Fitzgerald</p>
               <p class="year fw-semibold mb-0">1925</p>
               <p class="genre fw-semibold mb-0">Tragedy</p>
-              <p class="rating text-gold mb-0">⭐ 3.93 / 5</p>
+              <p class="rating text-gold mb-0"> 3.93 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -73,7 +74,7 @@
               <p class="card-text mb-1 fst-italic">by Harper Lee</p>
               <p class="year fw-semibold mb-0">1960</p>
               <p class="genre fw-semibold mb-0">Historical Fiction</p>
-              <p class="rating text-gold mb-0">⭐ 4.26 / 5</p>
+              <p class="rating text-gold mb-0"> 4.26 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -87,7 +88,7 @@
               <p class="card-text mb-1 fst-italic">by George Orwell</p>
               <p class="year fw-semibold mb-0">1949</p>
               <p class="genre fw-semibold mb-0">Dystopian</p>
-              <p class="rating text-gold mb-0">⭐ 4.20 / 5</p>
+              <p class="rating text-gold mb-0"> 4.20 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -101,7 +102,7 @@
               <p class="card-text mb-1 fst-italic">by Jane Austen</p>
               <p class="year fw-semibold mb-0">1813</p>
               <p class="genre fw-semibold mb-0">Romance</p>
-              <p class="rating text-gold mb-0">⭐ 4.29 / 5</p>
+              <p class="rating text-gold mb-0"> 4.29 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -115,7 +116,7 @@
               <p class="card-text mb-1 fst-italic">by Herman Melville</p>
               <p class="year fw-semibold mb-0">1851</p>
               <p class="genre fw-semibold mb-0">Adventure</p>
-              <p class="rating text-gold mb-0">⭐ 3.56 / 5</p>
+              <p class="rating text-gold mb-0"> 3.56 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -129,7 +130,7 @@
               <p class="card-text mb-1 fst-italic">by J.D. Salinger</p>
               <p class="year fw-semibold mb-0">1951</p>
               <p class="genre fw-semibold mb-0">Coming-of-Age</p>
-              <p class="rating text-gold mb-0">⭐ 3.80 / 5</p>
+              <p class="rating text-gold mb-0"> 3.80 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -143,7 +144,7 @@
               <p class="card-text mb-1 fst-italic">by J.R.R. Tolkien</p>
               <p class="year fw-semibold mb-0">1937</p>
               <p class="genre fw-semibold mb-0">Fantasy</p>
-              <p class="rating text-gold mb-0">⭐ 4.29 / 5</p>
+              <p class="rating text-gold mb-0"> 4.29 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -157,7 +158,7 @@
               <p class="card-text mb-1 fst-italic">by Ray Bradbury</p>
               <p class="year fw-semibold mb-0">1953</p>
               <p class="genre fw-semibold mb-0">Dystopian</p>
-              <p class="rating text-gold mb-0">⭐ 3.97 / 5</p>
+              <p class="rating text-gold mb-0"> 3.97 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -171,7 +172,7 @@
               <p class="card-text mb-1 fst-italic">by Charlotte Brontë</p>
               <p class="year fw-semibold mb-0">1847</p>
               <p class="genre fw-semibold mb-0">Gothic Fiction</p>
-              <p class="rating text-gold mb-0">⭐ 4.15 / 5</p>
+              <p class="rating text-gold mb-0"> 4.15 / 5 stars</p>
             </div>
           </div>
         </div>
@@ -185,7 +186,7 @@
               <p class="card-text mb-1 fst-italic">by Emily Brontë</p>
               <p class="year fw-semibold mb-0">1847</p>
               <p class="genre fw-semibold mb-0">Gothic Fiction</p>
-              <p class="rating text-gold mb-0">⭐ 3.90 / 5</p>
+              <p class="rating text-gold mb-0"> 3.90 / 5 stars</p>
             </div>
           </div>
         </div>
