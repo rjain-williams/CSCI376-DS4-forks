@@ -74,6 +74,7 @@ body {
     color: #344e41 !important;
     border-color: #344e41 !important;
     border-width: medium;
+    padding: 15px 30px;
   }
 
   .btn-outline-dark-green:hover, .btn-outline-dark-green:focus {
